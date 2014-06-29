@@ -12,5 +12,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITableView *tableView;
-
+@property (strong, nonatomic) NSMutableArray *dataArray;
 @end

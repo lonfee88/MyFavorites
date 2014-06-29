@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ItemCell.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,82 +17,60 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height-20) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height-20) style:UITableViewStylePlain];
     [self.window addSubview:self.tableView];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.dataArray = [[NSMutableArray alloc] init];
+    for(int i = 0; i < 10; ++i){
+        [self.dataArray addObject:[NSString stringWithFormat:@"¥ 29%d.00", i]];
+    }
+
     
     return YES;
 }
 
 #pragma mark tableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-    if(section == 0){
-        return 2;
-    }else if(section == 1){
-        return 2;
-    }else{
-        return 3;
-    }
-    return 1;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-//    cell.textLabel.text = [NSString stringWithFormat:@"this is cell(section=%d,row=%d)", indexPath.section, indexPath.row];
-    if(indexPath.section == 0){
-        if(indexPath.row == 0){
-            cell.textLabel.text = @"响铃模式振动";
-        }else if(indexPath.row == 1){
-            cell.textLabel.text = @"静音模式振动";
-        }
-    }else if(indexPath.section == 1){
-        if(indexPath.row == 0){
-            cell.textLabel.text = @"音量";
-        }else if(indexPath.row == 1){
-            cell.textLabel.text = @"用按钮调整";
-        }
-    }else if(indexPath.section == 2){
-        if(indexPath.row == 0){
-            cell.textLabel.text = @"电话铃声";
-        }else if(indexPath.row == 1){
-            cell.textLabel.text = @"短信铃声";
-        }else if(indexPath.row == 2){
-            cell.textLabel.text = @"收到新邮件";
-        }
+    ItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+    if(!cell){
+        cell = [[ItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ItemCell"];
     }
+    cell.itemImageView.image = [UIImage imageNamed:@"hezi11.jpg"];
+    cell.titleLabel.text = @"天猫魔盒TMB200F 高清电视网络机顶盒 wifi硬盘播放器 智能盒子1s";
+//    cell.priceLabel.text = @"¥ 299.00";
+    cell.priceLabel.text = [self.dataArray objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 110;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
-    if(section == 0){
-        return @"振动";
-    }else if(section == 1){
-        return @"铃声和提醒";
-    }else if(section == 2){
-        return @"铃声和震动模式";
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
-    return 0;
 }
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
 
-    if(section == 0){
-        return @"";
-    }else if(section == 1){
-        return @"铃声和提醒的音量可用按钮调整";
-    }else if(section == 2){
-        return @"";
-    }
-    return 0;
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
