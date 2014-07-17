@@ -19,6 +19,10 @@
 		00207B731960232C003E72AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00207B5B1960232C003E72AF /* UIKit.framework */; };
 		00207B7B1960232D003E72AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00207B791960232D003E72AF /* InfoPlist.strings */; };
 		00207B7D1960232D003E72AF /* TestTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B7C1960232D003E72AF /* TestTableViewTests.m */; };
+		00207B8819605718003E72AF /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B8719605718003E72AF /* ItemCell.m */; };
+		00207B8A19605901003E72AF /* hezi11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00207B8919605901003E72AF /* hezi11.jpg */; };
+		00207B91196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B8E196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m */; };
+		00207B92196060F8003E72AF /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B90196060F8003E72AF /* UIScrollView+SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,14 @@
 		00207B781960232D003E72AF /* TestTableViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestTableViewTests-Info.plist"; sourceTree = "<group>"; };
 		00207B7A1960232D003E72AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00207B7C1960232D003E72AF /* TestTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewTests.m; sourceTree = "<group>"; };
+		00207B8619605718003E72AF /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		00207B8719605718003E72AF /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		00207B8919605901003E72AF /* hezi11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hezi11.jpg; sourceTree = "<group>"; };
+		00207B8C196060F8003E72AF /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		00207B8D196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		00207B8E196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		00207B8F196060F8003E72AF /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		00207B90196060F8003E72AF /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +121,12 @@
 			children = (
 				00207B661960232C003E72AF /* AppDelegate.h */,
 				00207B671960232C003E72AF /* AppDelegate.m */,
+				00207B8B196060F8003E72AF /* SVPullToRefresh */,
 				00207B691960232C003E72AF /* Images.xcassets */,
 				00207B5E1960232C003E72AF /* Supporting Files */,
+				00207B8619605718003E72AF /* ItemCell.h */,
+				00207B8719605718003E72AF /* ItemCell.m */,
+				00207B8919605901003E72AF /* hezi11.jpg */,
 			);
 			path = TestTableView;
 			sourceTree = "<group>";
@@ -142,6 +158,18 @@
 				00207B791960232D003E72AF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00207B8B196060F8003E72AF /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				00207B8C196060F8003E72AF /* SVPullToRefresh.h */,
+				00207B8D196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.h */,
+				00207B8E196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m */,
+				00207B8F196060F8003E72AF /* UIScrollView+SVPullToRefresh.h */,
+				00207B90196060F8003E72AF /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00207B621960232C003E72AF /* InfoPlist.strings in Resources */,
+				00207B8A19605901003E72AF /* hezi11.jpg in Resources */,
 				00207B6A1960232C003E72AF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00207B91196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				00207B8819605718003E72AF /* ItemCell.m in Sources */,
 				00207B681960232C003E72AF /* AppDelegate.m in Sources */,
 				00207B641960232C003E72AF /* main.m in Sources */,
+				00207B92196060F8003E72AF /* UIScrollView+SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

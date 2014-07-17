@@ -18,7 +18,7 @@
         self.itemImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 90, 90)];
         [self.contentView addSubview:self.itemImageView];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.itemImageView.frame.origin.x+self.itemImageView.frame.size.width+10, self.itemImageView.frame.origin.y, 200, 60)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.itemImageView.frame.origin.x+self.itemImageView.frame.size.width+10, self.itemImageView.frame.origin.y, 180, 60)];
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
         [self.contentView addSubview:self.titleLabel];

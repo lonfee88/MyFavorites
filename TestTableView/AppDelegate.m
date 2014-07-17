@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ItemCell.h"
+#import "SVPullToRefresh.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -24,12 +25,48 @@
     self.tableView.dataSource = self;
     
     self.dataArray = [[NSMutableArray alloc] init];
+    [self addData:10];
+
+    __weak AppDelegate *weakSelf = self;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf.dataArray removeAllObjects];
+        [weakSelf addData:10];
+        
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.pullToRefreshView stopAnimating];
+    }];
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        NSLog(@"addInfiniteScrollingWithActionHandler");
+        
+        [weakSelf addData:10];
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.infiniteScrollingView stopAnimating];
+    }];
+    
+    UIButton *editButton = [[UIButton alloc] init];
+    editButton.frame = CGRectMake(200, self.window.frame.size.height-44, 80, 44);
+    [editButton setTitle:@"编辑" forState:UIControlStateNormal];
+    [editButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [editButton addTarget:self action:@selector(editButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.window addSubview:editButton];
+    return YES;
+}
+
+- (void)addData:(NSInteger)num{
     for(int i = 0; i < 10; ++i){
         [self.dataArray addObject:[NSString stringWithFormat:@"¥ 29%d.00", i]];
     }
+}
 
-    
-    return YES;
+#pragma mark action
+
+- (void)editButtonPress:(UIButton *)sender{
+    self.tableView.editing = !self.tableView.editing;
+    if(self.tableView.editing){
+        [sender setTitle:@"完成" forState:UIControlStateNormal];
+    }else{
+        [sender setTitle:@"编辑" forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark tableView
@@ -39,6 +76,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+//    ItemCell *cell = nil;
     if(!cell){
         cell = [[ItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ItemCell"];
     }
