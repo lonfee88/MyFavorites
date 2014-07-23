@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ItemModel.h"
 @interface ItemCell : UITableViewCell
 @property (nonatomic, strong) UIImageView *itemImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
+
+- (void)updateCellWithModel:(ItemModel *)model;
 @end

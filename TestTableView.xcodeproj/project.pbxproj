@@ -23,6 +23,7 @@
 		00207B8A19605901003E72AF /* hezi11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00207B8919605901003E72AF /* hezi11.jpg */; };
 		00207B91196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B8E196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m */; };
 		00207B92196060F8003E72AF /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B90196060F8003E72AF /* UIScrollView+SVPullToRefresh.m */; };
+		007E6AAC197E05E40095F733 /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E6AAB197E05E40095F733 /* ItemModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		00207B8E196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		00207B8F196060F8003E72AF /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		00207B90196060F8003E72AF /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		007E6AAA197E05E40095F733 /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
+		007E6AAB197E05E40095F733 /* ItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				00207B8619605718003E72AF /* ItemCell.h */,
 				00207B8719605718003E72AF /* ItemCell.m */,
 				00207B8919605901003E72AF /* hezi11.jpg */,
+				007E6AAA197E05E40095F733 /* ItemModel.h */,
+				007E6AAB197E05E40095F733 /* ItemModel.m */,
 			);
 			path = TestTableView;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007E6AAC197E05E40095F733 /* ItemModel.m in Sources */,
 				00207B91196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				00207B8819605718003E72AF /* ItemCell.m in Sources */,
 				00207B681960232C003E72AF /* AppDelegate.m in Sources */,
@@ -469,6 +475,7 @@
 				00207B821960232D003E72AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00207B831960232D003E72AF /* Build configuration list for PBXNativeTarget "TestTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +484,7 @@
 				00207B851960232D003E72AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -30,6 +30,12 @@
     return self;
 }
 
+- (void)updateCellWithModel:(ItemModel *)model{
+    self.itemImageView.image = [UIImage imageNamed:model.imageName];
+    self.titleLabel.text = model.title;
+    self.priceLabel.text = [NSString stringWithFormat:@"¥ %@", model.price];
+}
+
 - (void)awakeFromNib
 {
     // Initialization code

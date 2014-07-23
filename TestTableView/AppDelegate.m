@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ItemCell.h"
 #import "SVPullToRefresh.h"
+#import "ItemModel.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -43,18 +44,22 @@
         [weakSelf.tableView.infiniteScrollingView stopAnimating];
     }];
     
-    UIButton *editButton = [[UIButton alloc] init];
-    editButton.frame = CGRectMake(200, self.window.frame.size.height-44, 80, 44);
-    [editButton setTitle:@"编辑" forState:UIControlStateNormal];
-    [editButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [editButton addTarget:self action:@selector(editButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [self.window addSubview:editButton];
+//    UIButton *editButton = [[UIButton alloc] init];
+//    editButton.frame = CGRectMake(200, self.window.frame.size.height-44, 80, 44);
+//    [editButton setTitle:@"编辑" forState:UIControlStateNormal];
+//    [editButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [editButton addTarget:self action:@selector(editButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.window addSubview:editButton];
     return YES;
 }
 
 - (void)addData:(NSInteger)num{
     for(int i = 0; i < 10; ++i){
-        [self.dataArray addObject:[NSString stringWithFormat:@"¥ 29%d.00", i]];
+        ItemModel *itemModel = [[ItemModel alloc] init];
+        itemModel.imageName = @"hezi11.jpg";
+        itemModel.title = @"天猫魔盒TMB200F 高清电视网络机顶盒 wifi硬盘播放器 智能盒子1s";
+        itemModel.price = [NSString stringWithFormat:@"29%d.00", i];
+        [self.dataArray addObject:itemModel];
     }
 }
 
@@ -76,15 +81,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+//    cell = nil;
 //    ItemCell *cell = nil;
     if(!cell){
         cell = [[ItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ItemCell"];
     }
-    cell.itemImageView.image = [UIImage imageNamed:@"hezi11.jpg"];
-    cell.titleLabel.text = @"天猫魔盒TMB200F 高清电视网络机顶盒 wifi硬盘播放器 智能盒子1s";
-//    cell.priceLabel.text = @"¥ 299.00";
-    cell.priceLabel.text = [self.dataArray objectAtIndex:indexPath.row];
-    
+    ItemModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    [cell updateCellWithModel:model];
     return cell;
 }
 
