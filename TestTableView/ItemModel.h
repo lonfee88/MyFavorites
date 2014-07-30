@@ -12,4 +12,5 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *imageName;
+@property (nonatomic, copy) NSString *hotImageName;
 @end

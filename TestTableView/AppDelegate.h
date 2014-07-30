@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,UITableViewDelegate,UITableViewDataSource>
-
+@interface AppDelegate : UIResponder
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *dataArray;
 @end

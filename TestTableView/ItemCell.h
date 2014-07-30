@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIImageView *itemImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) UIImageView *hotImageView;
 
 - (void)updateCellWithModel:(ItemModel *)model;
 @end
