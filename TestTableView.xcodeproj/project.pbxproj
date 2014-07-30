@@ -25,7 +25,6 @@
 		00207B92196060F8003E72AF /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00207B90196060F8003E72AF /* UIScrollView+SVPullToRefresh.m */; };
 		007E6AAC197E05E40095F733 /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E6AAB197E05E40095F733 /* ItemModel.m */; };
 		9B112F1E1988DA3300E87A58 /* hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B112F1D1988DA3300E87A58 /* hot.png */; };
-		9B112F241988F12400E87A58 /* TBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B112F231988F12400E87A58 /* TBViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +65,6 @@
 		007E6AAA197E05E40095F733 /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
 		007E6AAB197E05E40095F733 /* ItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemModel.m; sourceTree = "<group>"; };
 		9B112F1D1988DA3300E87A58 /* hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hot.png; sourceTree = "<group>"; };
-		9B112F221988F12400E87A58 /* TBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBViewController.h; sourceTree = "<group>"; };
-		9B112F231988F12400E87A58 /* TBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +127,6 @@
 				9B112F1D1988DA3300E87A58 /* hot.png */,
 				00207B661960232C003E72AF /* AppDelegate.h */,
 				00207B671960232C003E72AF /* AppDelegate.m */,
-				9B112F221988F12400E87A58 /* TBViewController.h */,
-				9B112F231988F12400E87A58 /* TBViewController.m */,
 				00207B8B196060F8003E72AF /* SVPullToRefresh */,
 				00207B691960232C003E72AF /* Images.xcassets */,
 				00207B5E1960232C003E72AF /* Supporting Files */,
@@ -286,7 +281,6 @@
 				00207B91196060F8003E72AF /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				00207B8819605718003E72AF /* ItemCell.m in Sources */,
 				00207B681960232C003E72AF /* AppDelegate.m in Sources */,
-				9B112F241988F12400E87A58 /* TBViewController.m in Sources */,
 				00207B641960232C003E72AF /* main.m in Sources */,
 				00207B92196060F8003E72AF /* UIScrollView+SVPullToRefresh.m in Sources */,
 			);
